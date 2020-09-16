@@ -1,32 +1,33 @@
 class Hero:
 	# class variabel
-	jumlah_hero = 0
+	jumlah_hero = 0 #class variabel / statik variable
 
-	def __init__(self, inputName, inputHealth, inputPower, inputArmor):
+	def __init__(self, inputName, inputHealth, inputPower, inputArmor):#merupakan salh satu konstruktor, Metode __init__(sering disebut "the instaler"),
+		                                                        # melewati instance yang baru dibuat sebagai argumen disebut "self"
 		#instance variabel
-		self.name = inputName
-		self.health = inputHealth
-		self.power = inputPower
-		self.armor = inputArmor
-		Hero.jumlah_hero += 1
+		self.name = inputName     #object/instance variabel (menginisialisasi name dari object secara otomatis)
+		self.health = inputHealth #object/instance variabel (menginisialisasi health dari object secara otomatis)
+		self.power = inputPower   #object/instance variabel (menginisialisasi power dari object secara otomatis)
+		self.armor = inputArmor   #object/instance variabel (menginisialisasi armor dari object secara otomatis)
+		Hero.jumlah_hero += 1     #untuk mengakses variabel class/statik yang sudah dibuat
 
 	# void function, method tanpa return, tanpa argumen
-	def siapa(self):
-		print("namaku adalah " + self.name)
+	def siapa(self):                            #void function / method tanpa return dan tanpa argumen
+		print("namaku adalah " + self.name) #menampilan output dari method "self.name"
 
 	# method dengan argumen, tanpa return
-	def healthUp(self,up):
-		self.health += up
+	def healthUp(self,up):     #method dengan argumen, tanpa return
+		self.health += up  #menginisialisai healthUp dari method dengan argumen dan tanpa return
 
 	# method dengan return
-	def getHealth(self):
-		return self.health
+	def getHealth(self):       #method dengan return
+		return self.health #menginisialisai gethealth dari method dengan return
 
+ 
+hero1 = Hero('sniper', 100, 10, 5)    #menginputkan data atribut dari object 1 (hero1)
+hero2 = Hero('mario bros', 90, 5, 10) #menginputkan data atribut dari object 2 (hero2)
 
-hero1 = Hero('sniper', 100, 10, 5)
-hero2 = Hero('mario bros', 90, 5, 10)
+hero1.siapa()      #untuk mengakses method tanpa return dan argumen
+hero1.healthUp(10) #untuk mengakses method dengan argumen dan tanpa return
 
-hero1.siapa()
-hero1.healthUp(10)
-
-print(hero1.getHealth())
+print(hero1.getHealth()) #untuk mengakses dan menampilkan hasil dari method dengan return
